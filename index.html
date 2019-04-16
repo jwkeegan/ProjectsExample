@@ -1,33 +1,47 @@
-let's try this again...
+<!DOCTYPE html>
+<html lang="en">
 
-<script type="text/javascript">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
 
-    var redirect_uri = window.location.href;
-    console.log(redirect_uri);
+<body>
+    <h1>let's try this again...</h1>
+    <script type="text/javascript">
 
-    var clientID = "05124bd3d3bb4dc2b9eaa0a5303bde98";
+        var redirect_uri = window.location.href;
+        console.log(redirect_uri);
 
-    var scopes = "user-read-private user-read-email";
+        var clientID = "05124bd3d3bb4dc2b9eaa0a5303bde98";
 
-    var queryURL = "https://accounts.spotify.com/authorize?" +
-        "client_id=" + clientID + "&" +
-        "response_type=token&" +
-        "redirect_uri=" + redirect_uri + "&" +
-        "scope=" + scopes;
+        var scopes = "user-read-private user-read-email";
 
-    window.location.href = queryURL;
+        var queryURL = "https://accounts.spotify.com/authorize?" +
+            "client_id=" + clientID + "&" +
+            "response_type=token&" +
+            "redirect_uri=" + redirect_uri + "&" +
+            "scope=" + scopes;
 
-    $.ajax({
-        url: "https://api.spotify.com/v1/me",
-        headers: {
-            "Authorization": "Bearer " + accessToken
-        },
-        error: function (err) {
-            console.log("you done messed up");
-        },
-        success: function (data) {
-            console.log("yay");
-        }
-    });
+        window.location.href = queryURL;
 
-</script>
+        $.ajax({
+            url: "https://api.spotify.com/v1/me",
+            headers: {
+                "Authorization": "Bearer " + accessToken
+            },
+            error: function (err) {
+                console.log("you done messed up");
+            },
+            success: function (data) {
+                console.log("yay");
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
